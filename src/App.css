@@ -155,3 +155,94 @@ h4{
   background-color: gray;
   color: white;
 }
+
+.reservas-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+  text-align: center;
+  color: red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"], input[type="number"], select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  background-color: red;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.custom-calendar {
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile--disabled {
+  background: rgb(200, 200, 200) !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+}
+
+.react-calendar__tile {
+  color: black !important;
+}
+
+.react-calendar__tile:enabled:hover {
+  background: #f08080 !important;
+  color: white !important;
+}
+
+#id-reserva {
+  text-align: center;
+  font-size: 1.2em;
+  color: green;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .reservas-container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  input[type="text"], input[type="number"], select, button {
+    font-size: 1em;
+  }
+}
