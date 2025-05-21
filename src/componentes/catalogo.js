@@ -9,24 +9,24 @@ const ReservaMateriales = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!id || !materiales) {
       setError("Por favor, completa todos los campos.");
       return;
     }
-    
+
     setError("");
-    
+
     const reserva = {
       id,
       materiales: materiales.split(",").map(item => item.trim()),
       equipos: equipos.split(",").map(item => item.trim()),
       reactivos: reactivos.split(",").map(item => item.trim()),
     };
-    
+
     console.log("Reserva realizada:", reserva);
     alert("Reserva realizada con éxito.");
-    
+
     setId("");
     setMateriales("");
     setEquipos("");
@@ -34,7 +34,7 @@ const ReservaMateriales = () => {
   };
 
   return (
-    <div className="reserva-materiales-container">
+    <div className="reservas-container">
       <h2>Reservar materiales, equipos y reactivos</h2>
 
       {error && <p className="error">{error}</p>}
@@ -60,7 +60,10 @@ const ReservaMateriales = () => {
             onChange={(e) => setMateriales(e.target.value)}
             required
           />
-          <small>Escribe los materiales separados por coma, agregando cantidad y volumen. Ejemplo: Pipeta volúmetrica 10ml, frascos, microscopio.</small>
+          <small>
+            Escribe los materiales separados por coma, agregando cantidad y volumen. <br />
+            Ejemplo: Pipeta volumétrica 10ml, frascos, microscopio.
+          </small>
         </div>
 
         <div className="form-group">
@@ -71,7 +74,7 @@ const ReservaMateriales = () => {
             value={equipos}
             onChange={(e) => setEquipos(e.target.value)}
           />
-          <small>Escribe los equipos separados por coma. Ejemplo: Microscopio, balanza analítica.</small>
+          <small>Ejemplo: Microscopio, balanza analítica.</small>
         </div>
 
         <div className="form-group">
@@ -82,11 +85,17 @@ const ReservaMateriales = () => {
             value={reactivos}
             onChange={(e) => setReactivos(e.target.value)}
           />
-          <small>Escribe los reactivos separados por coma. Ejemplo: NaCl, HCl.</small>
+          <small>Ejemplo: NaCl, HCl.</small>
         </div>
 
         <button type="submit">Reservar</button>
       </form>
+
+      {id && (
+        <div id="id-reserva">
+          ID de reserva: {id}
+        </div>
+      )}
     </div>
   );
 };
